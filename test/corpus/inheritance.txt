@@ -1,0 +1,32 @@
+========
+Inheritance and Blocks
+========
+
+{{< parent }}
+{{$ block }}
+Content
+{{/ block }}
+{{/ parent }}
+
+---
+
+(template
+  (inheritance_statement
+    (inheritance_begin
+      (start_delimiter)
+      (tag_name)
+      (end_delimiter))
+    (block_statement
+      (block_begin
+        (start_delimiter)
+        (tag_name)
+        (end_delimiter))
+      (text)
+      (block_end
+        (start_delimiter)
+        (tag_name)
+        (end_delimiter)))
+    (inheritance_end
+      (start_delimiter)
+      (tag_name)
+      (end_delimiter))))
