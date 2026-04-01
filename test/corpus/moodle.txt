@@ -1,0 +1,21 @@
+========
+JS Block
+========
+
+{{#js}}
+console.log("hello");
+{{/js}}
+
+---
+
+(template
+  (section
+    (section_begin
+      (start_delimiter)
+      (tag_name)
+      (end_delimiter))
+    (text)
+    (section_end
+      (start_delimiter)
+      (tag_name)
+      (end_delimiter))))
