@@ -1,0 +1,66 @@
+========
+Parent template
+========
+
+{{<name}}{{/name}}
+
+---
+
+(template
+  (parent_template
+    (parent_template_begin
+      (start_delimiter)
+      (tag_name)
+      (end_delimiter))
+    (parent_template_end
+      (start_delimiter)
+      (tag_name)
+      (end_delimiter))))
+
+========
+Block statement
+========
+
+{{$name}}{{/name}}
+
+---
+
+(template
+  (block_statement
+    (block_statement_begin
+      (start_delimiter)
+      (tag_name)
+      (end_delimiter))
+    (block_statement_end
+      (start_delimiter)
+      (tag_name)
+      (end_delimiter))))
+
+========
+Inheritance
+========
+
+{{<parent}}{{$block}}content{{/block}}{{/parent}}
+
+---
+
+(template
+  (parent_template
+    (parent_template_begin
+      (start_delimiter)
+      (tag_name)
+      (end_delimiter))
+    (block_statement
+      (block_statement_begin
+        (start_delimiter)
+        (tag_name)
+        (end_delimiter))
+      (text)
+      (block_statement_end
+        (start_delimiter)
+        (tag_name)
+        (end_delimiter)))
+    (parent_template_end
+      (start_delimiter)
+      (tag_name)
+      (end_delimiter))))

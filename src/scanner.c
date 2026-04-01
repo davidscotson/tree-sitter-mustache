@@ -455,7 +455,8 @@ static bool scan(Scanner *scanner, TSLexer *lexer, const bool *valid_symbols) {
       lexer->lookahead != '^' && lexer->lookahead != '=' &&
       lexer->lookahead != '/' && lexer->lookahead != '!' &&
       lexer->lookahead != '#' && lexer->lookahead != '.' &&
-      lexer->lookahead != '>') {
+      lexer->lookahead != '>' && lexer->lookahead != '<' &&
+      lexer->lookahead != '$') {
     return scan_identifier_content(scanner, lexer);
   }
   if (valid_symbols[SET_START_DELIMITER_CONTENT]) {
