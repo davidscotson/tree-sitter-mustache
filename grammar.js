@@ -41,6 +41,8 @@ module.exports = grammar({
         $.ampersand_statement,
         $.section,
         $.inverted_section,
+        $.parent_template,
+        $.block_statement,
         $.interpolation_statement,
         $.set_delimiter_statement,
         $.partial_statement,
@@ -106,6 +108,34 @@ module.exports = grammar({
       seq(
         $.start_delimiter,
         "^",
+        alias($._start_tag_name, $.tag_name),
+        $.end_delimiter,
+      ),
+
+    parent_template: ($) =>
+      seq(
+        $.parent_template_begin,
+        repeat($._statement),
+        alias($._section_end, $.parent_template_end),
+      ),
+    parent_template_begin: ($) =>
+      seq(
+        $.start_delimiter,
+        "<",
+        alias($._start_tag_name, $.tag_name),
+        $.end_delimiter,
+      ),
+
+    block_statement: ($) =>
+      seq(
+        $.block_statement_begin,
+        repeat($._statement),
+        alias($._section_end, $.block_statement_end),
+      ),
+    block_statement_begin: ($) =>
+      seq(
+        $.start_delimiter,
+        "$",
         alias($._start_tag_name, $.tag_name),
         $.end_delimiter,
       ),
