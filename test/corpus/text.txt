@@ -49,3 +49,25 @@ End
       (tag_name)
       (end_delimiter)))
   (text))
+
+========
+Text with partial delimiters
+========
+
+function() { return true; }
+{{#section}} } {{/section}}
+
+---
+
+(template
+  (text)
+  (section
+    (section_begin
+      (start_delimiter)
+      (tag_name)
+      (end_delimiter))
+    (text)
+    (section_end
+      (start_delimiter)
+      (tag_name)
+      (end_delimiter))))
