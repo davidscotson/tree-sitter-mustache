@@ -1,0 +1,52 @@
+==================
+Mustache Blocks
+==================
+
+{{$ title }}
+  Default title
+{{/ title }}
+
+---
+
+(template
+  (block_statement
+    (block_begin
+      (start_delimiter)
+      (block_name)
+      (end_delimiter))
+    (text)
+    (block_end
+      (start_delimiter)
+      (tag_name)
+      (end_delimiter))))
+
+==================
+Parent Partials
+==================
+
+{{< layout }}
+  {{$ title }}My Title{{/ title }}
+{{/ layout }}
+
+---
+
+(template
+  (parent_partial_statement
+    (parent_partial_begin
+      (start_delimiter)
+      (partial_content)
+      (end_delimiter))
+    (block_statement
+      (block_begin
+        (start_delimiter)
+        (block_name)
+        (end_delimiter))
+      (text)
+      (block_end
+        (start_delimiter)
+        (tag_name)
+        (end_delimiter)))
+    (parent_partial_end
+      (start_delimiter)
+      (tag_name)
+      (end_delimiter))))
