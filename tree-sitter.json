@@ -6,9 +6,12 @@
       "scope": "source.mustache",
       "path": ".",
       "file-types": [
-        ".mustache"
+        "mustache"
       ],
-      "injection-regex": "^mustache$"
+      "injection-regex": "^mustache$",
+      "highlights": "queries/highlights.scm",
+      "injections": "queries/injections.scm",
+      "folds": "queries/folds.scm"
     }
   ],
   "metadata": {

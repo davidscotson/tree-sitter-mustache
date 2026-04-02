@@ -1,8 +1,10 @@
-((comment_statement) @injection.content
+((comment_statement
+    (comment_content) @injection.content)
  (#match? @injection.content "json")
  (#set! injection.language "json"))
 
-((comment_statement) @injection.content
+((comment_statement
+    (comment_content) @injection.content)
  (#not-match? @injection.content "json")
  (#set! injection.language "comment"))
 
