@@ -1,0 +1,12 @@
+========
+EOF in end set delimiter
+========
+
+{{=<< >>=}}
+
+---
+
+(template
+  (set_delimiter_statement
+    (start_delimiter)
+    (end_delimiter)))

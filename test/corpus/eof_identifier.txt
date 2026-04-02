@@ -1,0 +1,13 @@
+========
+EOF in identifier
+========
+
+{{ identifier
+
+---
+
+(template
+  (interpolation_statement
+    (start_delimiter)
+    (identifier)
+    (MISSING end_delimiter)))

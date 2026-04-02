@@ -1,0 +1,12 @@
+========
+EOF in text
+========
+
+hello {{
+
+---
+
+(template
+  (text)
+  (ERROR
+    (start_delimiter)))

@@ -1,0 +1,11 @@
+========
+EOF in set delimiter
+========
+
+{{=
+
+---
+
+(template
+  (ERROR
+    (start_delimiter)))

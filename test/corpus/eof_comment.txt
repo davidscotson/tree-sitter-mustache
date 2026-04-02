@@ -1,0 +1,12 @@
+========
+EOF in comment
+========
+
+{{! comment
+
+---
+
+(template
+  (ERROR
+    (start_delimiter)
+    (UNEXPECTED 'c')))
