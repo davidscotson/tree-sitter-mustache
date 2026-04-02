@@ -10,17 +10,8 @@
       }
     },
     "_declaration": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "comment_statement"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_statement"
-        }
-      ]
+      "type": "SYMBOL",
+      "name": "_statement"
     },
     "comment_statement": {
       "type": "SEQ",
@@ -39,8 +30,13 @@
           "value": "!"
         },
         {
-          "type": "SYMBOL",
-          "name": "_comment_content"
+          "type": "ALIAS",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_comment_content"
+          },
+          "named": true,
+          "value": "comment_content"
         },
         {
           "type": "ALIAS",
@@ -56,6 +52,10 @@
     "_statement": {
       "type": "CHOICE",
       "members": [
+        {
+          "type": "SYMBOL",
+          "name": "comment_statement"
+        },
         {
           "type": "SYMBOL",
           "name": "triple_statement"
@@ -74,7 +74,15 @@
         },
         {
           "type": "SYMBOL",
-          "name": "interpolation_statement"
+          "name": "block_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "parent_partial_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "partial_statement"
         },
         {
           "type": "SYMBOL",
@@ -82,7 +90,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "partial_statement"
+          "name": "interpolation_statement"
         },
         {
           "type": "SYMBOL",
@@ -206,10 +214,112 @@
           "type": "ALIAS",
           "content": {
             "type": "SYMBOL",
-            "name": "_comment_content"
+            "name": "_start_tag_name"
           },
           "named": true,
           "value": "partial_content"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "end_delimiter"
+        }
+      ]
+    },
+    "parent_partial_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "parent_partial_begin"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_statement"
+          }
+        },
+        {
+          "type": "ALIAS",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_section_end"
+          },
+          "named": true,
+          "value": "parent_partial_end"
+        }
+      ]
+    },
+    "parent_partial_begin": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "start_delimiter"
+        },
+        {
+          "type": "STRING",
+          "value": "<"
+        },
+        {
+          "type": "ALIAS",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_start_tag_name"
+          },
+          "named": true,
+          "value": "partial_content"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "end_delimiter"
+        }
+      ]
+    },
+    "block_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "block_begin"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_statement"
+          }
+        },
+        {
+          "type": "ALIAS",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_section_end"
+          },
+          "named": true,
+          "value": "block_end"
+        }
+      ]
+    },
+    "block_begin": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "start_delimiter"
+        },
+        {
+          "type": "STRING",
+          "value": "$"
+        },
+        {
+          "type": "ALIAS",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_start_tag_name"
+          },
+          "named": true,
+          "value": "block_name"
         },
         {
           "type": "SYMBOL",

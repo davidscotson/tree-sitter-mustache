@@ -27,6 +27,119 @@
     }
   },
   {
+    "type": "block_begin",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "block_name",
+          "named": true
+        },
+        {
+          "type": "end_delimiter",
+          "named": true
+        },
+        {
+          "type": "start_delimiter",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "block_end",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "end_delimiter",
+          "named": true
+        },
+        {
+          "type": "erroneous_tag_name",
+          "named": true
+        },
+        {
+          "type": "start_delimiter",
+          "named": true
+        },
+        {
+          "type": "tag_name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "block_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "ampersand_statement",
+          "named": true
+        },
+        {
+          "type": "block_begin",
+          "named": true
+        },
+        {
+          "type": "block_end",
+          "named": true
+        },
+        {
+          "type": "block_statement",
+          "named": true
+        },
+        {
+          "type": "comment_statement",
+          "named": true
+        },
+        {
+          "type": "interpolation_statement",
+          "named": true
+        },
+        {
+          "type": "inverted_section",
+          "named": true
+        },
+        {
+          "type": "parent_partial_statement",
+          "named": true
+        },
+        {
+          "type": "partial_statement",
+          "named": true
+        },
+        {
+          "type": "section",
+          "named": true
+        },
+        {
+          "type": "set_delimiter_statement",
+          "named": true
+        },
+        {
+          "type": "text",
+          "named": true
+        },
+        {
+          "type": "triple_statement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "comment_statement",
     "named": true,
     "fields": {},
@@ -40,6 +153,10 @@
         },
         {
           "type": "_start_delimiter",
+          "named": true
+        },
+        {
+          "type": "comment_content",
           "named": true
         }
       ]
@@ -90,6 +207,14 @@
           "named": true
         },
         {
+          "type": "block_statement",
+          "named": true
+        },
+        {
+          "type": "comment_statement",
+          "named": true
+        },
+        {
           "type": "interpolation_statement",
           "named": true
         },
@@ -103,6 +228,10 @@
         },
         {
           "type": "inverted_section_end",
+          "named": true
+        },
+        {
+          "type": "parent_partial_statement",
           "named": true
         },
         {
@@ -179,6 +308,119 @@
     }
   },
   {
+    "type": "parent_partial_begin",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "end_delimiter",
+          "named": true
+        },
+        {
+          "type": "partial_content",
+          "named": true
+        },
+        {
+          "type": "start_delimiter",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "parent_partial_end",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "end_delimiter",
+          "named": true
+        },
+        {
+          "type": "erroneous_tag_name",
+          "named": true
+        },
+        {
+          "type": "start_delimiter",
+          "named": true
+        },
+        {
+          "type": "tag_name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "parent_partial_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "ampersand_statement",
+          "named": true
+        },
+        {
+          "type": "block_statement",
+          "named": true
+        },
+        {
+          "type": "comment_statement",
+          "named": true
+        },
+        {
+          "type": "interpolation_statement",
+          "named": true
+        },
+        {
+          "type": "inverted_section",
+          "named": true
+        },
+        {
+          "type": "parent_partial_begin",
+          "named": true
+        },
+        {
+          "type": "parent_partial_end",
+          "named": true
+        },
+        {
+          "type": "parent_partial_statement",
+          "named": true
+        },
+        {
+          "type": "partial_statement",
+          "named": true
+        },
+        {
+          "type": "section",
+          "named": true
+        },
+        {
+          "type": "set_delimiter_statement",
+          "named": true
+        },
+        {
+          "type": "text",
+          "named": true
+        },
+        {
+          "type": "triple_statement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "partial_statement",
     "named": true,
     "fields": {},
@@ -229,11 +471,23 @@
           "named": true
         },
         {
+          "type": "block_statement",
+          "named": true
+        },
+        {
+          "type": "comment_statement",
+          "named": true
+        },
+        {
           "type": "interpolation_statement",
           "named": true
         },
         {
           "type": "inverted_section",
+          "named": true
+        },
+        {
+          "type": "parent_partial_statement",
           "named": true
         },
         {
@@ -350,6 +604,10 @@
           "named": true
         },
         {
+          "type": "block_statement",
+          "named": true
+        },
+        {
           "type": "comment_statement",
           "named": true
         },
@@ -359,6 +617,10 @@
         },
         {
           "type": "inverted_section",
+          "named": true
+        },
+        {
+          "type": "parent_partial_statement",
           "named": true
         },
         {
@@ -420,6 +682,10 @@
     "named": false
   },
   {
+    "type": "$",
+    "named": false
+  },
+  {
     "type": "&",
     "named": false
   },
@@ -429,6 +695,10 @@
   },
   {
     "type": "/",
+    "named": false
+  },
+  {
+    "type": "<",
     "named": false
   },
   {
@@ -449,6 +719,14 @@
   },
   {
     "type": "_start_delimiter",
+    "named": true
+  },
+  {
+    "type": "block_name",
+    "named": true
+  },
+  {
+    "type": "comment_content",
     "named": true
   },
   {
