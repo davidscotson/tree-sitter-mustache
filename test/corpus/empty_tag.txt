@@ -8,4 +8,5 @@ Empty start tag
 
 (template
   (ERROR
-    (start_delimiter)))
+    (start_delimiter)
+    (comment_content)))
