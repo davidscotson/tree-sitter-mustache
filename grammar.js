@@ -22,6 +22,7 @@ module.exports = grammar({
     $._set_end_delimiter_content,
     $._old_end_delimiter,
     $.text,
+    $._tag_name,
   ],
 
   rules: {
@@ -69,7 +70,7 @@ module.exports = grammar({
       seq(
         $.start_delimiter,
         ">",
-        alias($._start_tag_name, $.partial_content),
+        alias($._tag_name, $.partial_content),
         $.end_delimiter,
       ),
 

@@ -1,0 +1,53 @@
+========
+Different lengths for start and end delimiters
+========
+
+{{={{{ }}}=}}{{
+
+---
+
+(template
+  (set_delimiter_statement
+    (start_delimiter)
+    (end_delimiter))
+  (ERROR
+    (comment_content)))
+
+========
+Input starting with part of start delimiter
+========
+
+{a
+
+---
+
+(template
+  (ERROR
+    (comment_content)))
+
+========
+Input starting with part of end delimiter
+========
+
+{{= [[ ] =}} [a
+
+---
+
+(template
+  (ERROR
+    (start_delimiter)
+    (comment_content)
+    (end_delimiter)
+    (comment_content))
+  (end_delimiter))
+
+========
+Input containing part of delimiter
+========
+
+a{b
+
+---
+
+(template
+  (text))
