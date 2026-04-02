@@ -46,3 +46,21 @@ Comment with partial delimiters
     (_start_delimiter)
     (comment_content)
     (_end_delimiter)))
+
+========
+Comment with partial delimiters
+========
+
+{{!
+  Example context:
+  {
+    "key": "value"
+  }
+}}
+
+---
+
+(template
+  (comment_statement
+    (_start_delimiter)
+    (_end_delimiter)))
