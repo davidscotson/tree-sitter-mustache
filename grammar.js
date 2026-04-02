@@ -26,7 +26,7 @@ module.exports = grammar({
 
   rules: {
     template: ($) => repeat($._declaration),
-    _declaration: ($) => choice($.comment_statement, $._statement),
+    _declaration: ($) => $._statement,
     comment_statement: ($) =>
       seq(
         alias($.start_delimiter, $._start_delimiter),
@@ -37,13 +37,16 @@ module.exports = grammar({
 
     _statement: ($) =>
       choice(
+        $.comment_statement,
         $.triple_statement,
         $.ampersand_statement,
         $.section,
         $.inverted_section,
-        $.interpolation_statement,
-        $.set_delimiter_statement,
+        $.block_statement,
+        $.parent_partial_statement,
         $.partial_statement,
+        $.set_delimiter_statement,
+        $.interpolation_statement,
         $.text,
       ),
     interpolation_statement: ($) =>
@@ -66,7 +69,37 @@ module.exports = grammar({
       seq(
         $.start_delimiter,
         ">",
-        alias($._comment_content, $.partial_content),
+        alias($._start_tag_name, $.partial_content),
+        $.end_delimiter,
+      ),
+
+    parent_partial_statement: ($) =>
+      seq(
+        $.parent_partial_begin,
+        repeat($._statement),
+        alias($._section_end, $.parent_partial_end),
+      ),
+
+    parent_partial_begin: ($) =>
+      seq(
+        $.start_delimiter,
+        "<",
+        alias($._start_tag_name, $.partial_content),
+        $.end_delimiter,
+      ),
+
+    block_statement: ($) =>
+      seq(
+        $.block_begin,
+        repeat($._statement),
+        alias($._section_end, $.block_end),
+      ),
+
+    block_begin: ($) =>
+      seq(
+        $.start_delimiter,
+        "$",
+        alias($._start_tag_name, $.block_name),
         $.end_delimiter,
       ),
 
