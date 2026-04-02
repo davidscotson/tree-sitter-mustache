@@ -1,0 +1,11 @@
+========
+Empty start tag
+========
+
+{{#}}
+
+---
+
+(template
+  (ERROR
+    (start_delimiter)))

@@ -1,0 +1,15 @@
+========
+Empty end tag
+========
+
+{{#name}}{{/}}
+
+---
+
+(template
+  (ERROR
+    (section_begin
+      (start_delimiter)
+      (tag_name)
+      (end_delimiter))
+    (start_delimiter)))
