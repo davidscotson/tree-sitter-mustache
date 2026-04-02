@@ -307,10 +307,8 @@ static bool scan_comment_content(Scanner *scanner, TSLexer *lexer) {
       lexer->advance(lexer, false);
     } else {
       if (end_i > 0) {
-        for (int i = 0; i < end_i; i++) {
-          lexer->mark_end(lexer);
-          current_size++;
-        }
+        lexer->mark_end(lexer);
+        current_size += end_i;
       }
       lexer->advance(lexer, false);
       lexer->mark_end(lexer);
@@ -325,10 +323,8 @@ static bool scan_comment_content(Scanner *scanner, TSLexer *lexer) {
 
     if (lexer->eof(lexer) && current_size > 0) {
       if (end_i > 0) {
-        for (int i = 0; i < end_i; i++) {
-          lexer->mark_end(lexer);
-          current_size++;
-        }
+        lexer->mark_end(lexer);
+        current_size += end_i;
       }
       break;
     } else if (lexer->eof(lexer) && current_size == 0)
@@ -441,10 +437,8 @@ static bool scan_text(Scanner *scanner, TSLexer *lexer) {
     } else {
       lexer->advance(lexer, false);
       int limit = start_i > 0 ? start_i : end_i;
-      for (int i = 0; i < limit + 1; i++) {
-        lexer->mark_end(lexer);
-        current_size++;
-      }
+      lexer->mark_end(lexer);
+      current_size += limit + 1;
       start_i = 0;
       end_i = 0;
     }
