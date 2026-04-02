@@ -11,3 +11,5 @@ the [Mustache Specification][specification].
 
 [ci]: https://img.shields.io/github/actions/workflow/status/TheLeoP/tree-sitter-mustache/ci.yml?logo=github&label=CI
 [specification]: https://github.com/mustache/spec
+
+Testing the CI workflows
