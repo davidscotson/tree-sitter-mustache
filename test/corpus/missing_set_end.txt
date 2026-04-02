@@ -8,4 +8,5 @@ Missing set end delimiter
 
 (template
   (ERROR
-    (start_delimiter)))
+    (start_delimiter)
+    (comment_content)))

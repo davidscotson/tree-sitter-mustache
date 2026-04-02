@@ -31,7 +31,7 @@ module.exports = grammar({
       seq(
         alias($.start_delimiter, $._start_delimiter),
         "!",
-        $._comment_content,
+        alias($._comment_content, $.comment_content),
         alias($.end_delimiter, $._end_delimiter),
       ),
 
