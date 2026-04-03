@@ -21,6 +21,9 @@ on:
       - binding.gyp
       - .github/workflows/ci.yml
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 concurrency:
   group: ${{github.workflow}}-${{github.ref}}
   cancel-in-progress: true
