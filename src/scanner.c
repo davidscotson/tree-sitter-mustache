@@ -299,10 +299,10 @@ static bool scan_comment_content(Scanner *scanner, TSLexer *lexer) {
   int end_i = 0;
 
   while (true) {
-    int ith_end =
+    int end_delimiter_char_i =
         get_delimiter(scanner->end_delimiter, end_i, DEFAULT_END_DELIMITER);
 
-    if (lexer->lookahead == ith_end) {
+    if (lexer->lookahead == end_delimiter_char_i) {
       end_i++;
       lexer->advance(lexer, false);
     } else {
@@ -427,15 +427,15 @@ static bool scan_text(Scanner *scanner, TSLexer *lexer) {
   int start_i = 0;
   int end_i = 0;
   while (true) {
-    int ith_start = get_delimiter(scanner->start_delimiter, start_i,
-                                  DEFAULT_START_DELIMITER);
-    int ith_end =
+    int start_delimiter_char_i = get_delimiter(scanner->start_delimiter, start_i,
+                                      DEFAULT_START_DELIMITER);
+    int end_delimiter_char_i =
         get_delimiter(scanner->end_delimiter, end_i, DEFAULT_END_DELIMITER);
 
-    if (lexer->lookahead == ith_start) {
+    if (lexer->lookahead == start_delimiter_char_i) {
       start_i++;
       lexer->advance(lexer, false);
-    } else if (lexer->lookahead == ith_end) {
+    } else if (lexer->lookahead == end_delimiter_char_i) {
       end_i++;
       lexer->advance(lexer, false);
     } else {
