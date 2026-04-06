@@ -13,4 +13,4 @@ Empty end tag
       (tag_name)
       (end_delimiter))
     (start_delimiter)
-    (comment_content)))
+    ))
