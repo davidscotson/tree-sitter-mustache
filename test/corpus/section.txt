@@ -62,7 +62,7 @@ Section erroneous end tag
       (end_delimiter))
     (section_end
       (start_delimiter)
-      (erroneous_tag_name)
+      (tag_name)
       (end_delimiter))))
 
 ========
@@ -121,7 +121,6 @@ Nested sections
       (start_delimiter)
       (tag_name)
       (end_delimiter))))
-
 
 ========
 Inverted section

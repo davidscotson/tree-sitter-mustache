@@ -1,6 +1,6 @@
-========|||
+========
 Real world example
-========|||
+========
 
 ---
 # This file was generated from `meta.yml`, please do not edit manually.
@@ -62,7 +62,7 @@ Related publications, if any, are listed below.
 
 {{& index_documentation }}
 
----|||
+---
 
 (template
   (text)
