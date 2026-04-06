@@ -15,7 +15,8 @@ Section simple
     (section_end
       (start_delimiter)
       (tag_name)
-      (end_delimiter))))
+      (end_delimiter)))
+  (text))
 
 ========
 Section identifier
@@ -38,7 +39,8 @@ Section identifier
     (section_end
       (start_delimiter)
       (tag_name)
-      (end_delimiter))))
+      (end_delimiter)))
+  (text))
 
 ========
 Section erroneous end tag
@@ -62,8 +64,9 @@ Section erroneous end tag
       (end_delimiter))
     (section_end
       (start_delimiter)
-      (erroneous_tag_name)
-      (end_delimiter))))
+      (tag_name)
+      (end_delimiter)))
+  (text))
 
 ========
 Nested sections
@@ -120,8 +123,8 @@ Nested sections
     (section_end
       (start_delimiter)
       (tag_name)
-      (end_delimiter))))
-
+      (end_delimiter)))
+  (text))
 
 ========
 Inverted section
@@ -140,4 +143,5 @@ Inverted section
     (inverted_section_end
       (start_delimiter)
       (tag_name)
-      (end_delimiter))))
+      (end_delimiter)))
+  (text))

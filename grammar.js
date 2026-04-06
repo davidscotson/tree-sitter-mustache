@@ -1,29 +1,5 @@
-/**
- * @file Mustache grammar for tree-sitter
- * @author Luis Calle <eugenio0523@gmail.com>
- * @license MIT
- */
-
-/// <reference types="tree-sitter-cli/dsl" />
-// @ts-check
-
 module.exports = grammar({
-  name: "mustache",
-
-  externals: ($) => [
-    $._start_tag_name,
-    $._end_tag_name,
-    $._erroneous_end_tag_name,
-    $.start_delimiter,
-    $.end_delimiter,
-    $._comment_content,
-    $._identifier_content,
-    $._set_start_delimiter_content,
-    $._set_end_delimiter_content,
-    $._old_end_delimiter,
-    $.text,
-  ],
-
+  name: 'mustache',
   rules: {
     template: ($) => repeat($._declaration),
     _declaration: ($) => $._statement,
@@ -45,7 +21,6 @@ module.exports = grammar({
         $.block_statement,
         $.parent_partial_statement,
         $.partial_statement,
-        $.set_delimiter_statement,
         $.interpolation_statement,
         $.text,
       ),
@@ -55,16 +30,6 @@ module.exports = grammar({
       seq($.start_delimiter, "{", $._expression, "}", $.end_delimiter),
     ampersand_statement: ($) =>
       seq($.start_delimiter, "&", $._expression, $.end_delimiter),
-    set_delimiter_statement: ($) =>
-      seq(
-        $.start_delimiter,
-        "=",
-        $._set_start_delimiter_content,
-        /\s/,
-        $._set_end_delimiter_content,
-        "=",
-        alias($._old_end_delimiter, $.end_delimiter),
-      ),
     partial_statement: ($) =>
       seq(
         $.start_delimiter,
@@ -114,10 +79,7 @@ module.exports = grammar({
       seq(
         $.start_delimiter,
         "/",
-        choice(
-          alias($._end_tag_name, $.tag_name),
-          alias($._erroneous_end_tag_name, $.erroneous_tag_name),
-        ),
+        alias($._end_tag_name, $.tag_name),
         $.end_delimiter,
       ),
 
@@ -147,5 +109,20 @@ module.exports = grammar({
 
     identifier: ($) => $._identifier_content,
     path_expression: ($) => seq($.identifier, repeat1(seq(".", $.identifier))),
+
+    start_delimiter: ($) => "{{",
+    end_delimiter: ($) => "}}",
+
+    _start_tag_name: ($) => /[^\s}]+/,
+    _end_tag_name: ($) => /[^\s}]+/,
+
+    _comment_content: ($) => /([^}]|}[^}])*/,
+    _identifier_content: ($) => /[^\s}\.#\^\/!><\$&\{]+/,
+
+    text: ($) => choice(
+      /([^{}]+|\{[^{]|\}[^}])+/,
+      /\{/,
+      /\}/
+    )
   },
 });

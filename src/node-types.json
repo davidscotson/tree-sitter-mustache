@@ -62,10 +62,6 @@
           "named": true
         },
         {
-          "type": "erroneous_tag_name",
-          "named": true
-        },
-        {
           "type": "start_delimiter",
           "named": true
         },
@@ -75,6 +71,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "block_name",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "block_statement",
@@ -122,10 +123,6 @@
         },
         {
           "type": "section",
-          "named": true
-        },
-        {
-          "type": "set_delimiter_statement",
           "named": true
         },
         {
@@ -243,10 +240,6 @@
           "named": true
         },
         {
-          "type": "set_delimiter_statement",
-          "named": true
-        },
-        {
           "type": "text",
           "named": true
         },
@@ -293,10 +286,6 @@
           "named": true
         },
         {
-          "type": "erroneous_tag_name",
-          "named": true
-        },
-        {
           "type": "start_delimiter",
           "named": true
         },
@@ -340,10 +329,6 @@
       "types": [
         {
           "type": "end_delimiter",
-          "named": true
-        },
-        {
-          "type": "erroneous_tag_name",
           "named": true
         },
         {
@@ -406,10 +391,6 @@
           "named": true
         },
         {
-          "type": "set_delimiter_statement",
-          "named": true
-        },
-        {
           "type": "text",
           "named": true
         },
@@ -419,6 +400,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "partial_content",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "partial_statement",
@@ -507,10 +493,6 @@
           "named": true
         },
         {
-          "type": "set_delimiter_statement",
-          "named": true
-        },
-        {
           "type": "text",
           "named": true
         },
@@ -557,10 +539,6 @@
           "named": true
         },
         {
-          "type": "erroneous_tag_name",
-          "named": true
-        },
-        {
           "type": "start_delimiter",
           "named": true
         },
@@ -572,23 +550,9 @@
     }
   },
   {
-    "type": "set_delimiter_statement",
+    "type": "tag_name",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "end_delimiter",
-          "named": true
-        },
-        {
-          "type": "start_delimiter",
-          "named": true
-        }
-      ]
-    }
+    "fields": {}
   },
   {
     "type": "template",
@@ -632,10 +596,6 @@
           "named": true
         },
         {
-          "type": "set_delimiter_statement",
-          "named": true
-        },
-        {
           "type": "text",
           "named": true
         },
@@ -645,6 +605,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "text",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "triple_statement",
@@ -702,10 +667,6 @@
     "named": false
   },
   {
-    "type": "=",
-    "named": false
-  },
-  {
     "type": ">",
     "named": false
   },
@@ -722,10 +683,6 @@
     "named": true
   },
   {
-    "type": "block_name",
-    "named": true
-  },
-  {
     "type": "comment_content",
     "named": true
   },
@@ -734,23 +691,7 @@
     "named": true
   },
   {
-    "type": "erroneous_tag_name",
-    "named": true
-  },
-  {
-    "type": "partial_content",
-    "named": true
-  },
-  {
     "type": "start_delimiter",
-    "named": true
-  },
-  {
-    "type": "tag_name",
-    "named": true
-  },
-  {
-    "type": "text",
     "named": true
   },
   {

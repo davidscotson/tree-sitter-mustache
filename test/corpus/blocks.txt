@@ -18,7 +18,8 @@ Mustache Blocks
     (block_end
       (start_delimiter)
       (tag_name)
-      (end_delimiter))))
+      (end_delimiter)))
+  (text))
 
 ==================
 Parent Partials
@@ -49,4 +50,5 @@ Parent Partials
     (parent_partial_end
       (start_delimiter)
       (tag_name)
-      (end_delimiter))))
+      (end_delimiter)))
+  (text))
