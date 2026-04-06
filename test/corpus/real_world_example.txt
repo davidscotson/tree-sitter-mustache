@@ -255,5 +255,4 @@ Related publications, if any, are listed below.
   (ampersand_statement
     (start_delimiter)
     (identifier)
-    (end_delimiter))
-  (text))
+    (end_delimiter)))

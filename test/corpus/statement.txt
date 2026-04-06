@@ -10,8 +10,7 @@ Simple statement
   (interpolation_statement
     (start_delimiter)
     (identifier)
-    (end_delimiter))
-  (text))
+    (end_delimiter)))
 
 ========
 Triple statement
@@ -25,8 +24,7 @@ Triple statement
   (triple_statement
     (start_delimiter)
     (identifier)
-    (end_delimiter))
-  (text))
+    (end_delimiter)))
 
 ========
 Ampersand statement
@@ -40,8 +38,7 @@ Ampersand statement
   (ampersand_statement
     (start_delimiter)
     (identifier)
-    (end_delimiter))
-  (text))
+    (end_delimiter)))
 
 ========
 Path statement
@@ -57,8 +54,7 @@ Path statement
     (path_expression
       (identifier)
       (identifier))
-    (end_delimiter))
-  (text))
+    (end_delimiter)))
 
 ========
 Dot statement
@@ -71,5 +67,4 @@ Dot statement
 (template
   (interpolation_statement
     (start_delimiter)
-    (end_delimiter))
-  (text))
+    (end_delimiter)))

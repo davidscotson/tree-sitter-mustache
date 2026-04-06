@@ -10,8 +10,7 @@ Comments
   (comment_statement
     (_start_delimiter)
     (comment_content)
-    (_end_delimiter))
-  (text))
+    (_end_delimiter)))
 
 ========
 Multiline comments
@@ -27,8 +26,7 @@ Comment}}
   (comment_statement
     (_start_delimiter)
     (comment_content)
-    (_end_delimiter))
-  (text))
+    (_end_delimiter)))
 
 ========
 Comment with partial delimiters
@@ -47,5 +45,4 @@ Comment with partial delimiters
   (comment_statement
     (_start_delimiter)
     (comment_content)
-    (_end_delimiter))
-  (text))
+    (_end_delimiter)))

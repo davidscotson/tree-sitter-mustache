@@ -10,5 +10,4 @@ Simple partial
   (partial_statement
     (start_delimiter)
     (partial_content)
-    (end_delimiter))
-  (text))
+    (end_delimiter)))
