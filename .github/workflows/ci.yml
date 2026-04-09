@@ -21,6 +21,9 @@ on:
       - binding.gyp
       - .github/workflows/ci.yml
 
+permissions:
+  contents: read
+
 concurrency:
   group: ${{github.workflow}}-${{github.ref}}
   cancel-in-progress: true
