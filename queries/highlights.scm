@@ -10,6 +10,12 @@
 (identifier) @variable
 
 (tag_name) @variable.parameter
+(erroneous_tag_name) @error
+
+(text) @string
+
+((tag_name) @function.builtin
+ (#any-of? @function.builtin "js" "str" "pix" "quote" "userdate" "shortentext" "cleanstr"))
 
 (partial_content) @module
 
